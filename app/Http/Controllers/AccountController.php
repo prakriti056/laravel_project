@@ -387,7 +387,7 @@ public function logout(Request $request)
          'user_id' => Auth::user()->id]
          )->first();
 
-        if($jobApplication == nuLL) {
+        if($jobApplication == null) {
         session()->flash('error','Job application not found.');
         return response()->json([
             'status' => false,
@@ -429,7 +429,7 @@ public function logout(Request $request)
          'user_id' => Auth::user()->id]
          )->first();
 
-        if($savedJob == nuLL) {
+        if($savedJob == null) {
         session()->flash('error','Job not found.');
         return response()->json([
             'status' => false,

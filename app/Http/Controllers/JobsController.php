@@ -122,7 +122,7 @@ class JobsController extends Controller
             $job = Job::where('id',$id)->first();
 
             //If job not found in db
-            if($job == nuLL) {
+            if($job == null) {
                 $message = 'Job does not exist.';
                 session()->flash('error',$message);
                 return response()->json([
@@ -190,7 +190,7 @@ class JobsController extends Controller
 
         $job = Job::find($id);
 
-         if ($job == nuLL) {
+         if ($job == null) {
 
             session()->flash('error','Job not found');
             return response()->json([
